@@ -3,15 +3,24 @@ import { BsStarFill } from "react-icons/bs";
 import { IoShieldCheckmark } from "react-icons/io5";
 
 
-const CarCard = ({car}) => {
+const CarCard = ({car, card, setCard}) => {
+    
     const [rent, setRent] = useState(false);
+
+    const rentBtnHandle = () => {
+      setRent(true)
+      setCard([...card, car])
+    }
+    
+    
+
     return (
         <div className="card bg-base-100 shadow-sm">
             <figure>
               <img
                 className="p-4 rounded-4xl h-80 w-full object-contain"
                 src={car.image}
-                attribute={car.name}
+                
               />
             </figure>
             <div className="card-body">
@@ -50,7 +59,7 @@ const CarCard = ({car}) => {
               ))}
             </div>
             <div className="card-actions justify-center p-3">
-              <button onClick={() => setRent(true)} className="btn btn-primary w-full rounded-full">
+              <button onClick={rentBtnHandle} className="btn btn-primary w-full rounded-full">
                 {`${rent? "Added to Cart" : "Rent Now" }`}
               </button>
             </div>

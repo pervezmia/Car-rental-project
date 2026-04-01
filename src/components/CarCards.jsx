@@ -1,9 +1,9 @@
 import { use } from "react";
 import CarCard from "./carCard";
 
-const CarCards = ({ getDataPromise }) => {
+const CarCards = ({ getDataPromise, setActiveTab, card, setCard }) => {
   const dataOfCars = use(getDataPromise);
-  console.log(dataOfCars);
+  // console.log(dataOfCars);
 
 
   return (
@@ -11,7 +11,8 @@ const CarCards = ({ getDataPromise }) => {
       {dataOfCars.map((car) => (
         
         <div key={car.id} className="">
-          <CarCard car = {car}></CarCard>
+          <CarCard card = {card} setCard = {setCard} car = {car} setActiveTab = {setActiveTab}></CarCard>
+          
         </div>
       ))}
     </div>
