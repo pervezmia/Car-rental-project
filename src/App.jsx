@@ -4,6 +4,8 @@ import CarCards from "./components/CarCards";
 import CartSection from "./components/CartSection";
 import IsActive from "./components/IsActive";
 import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
+import Footer from "./components/Footer";
 
 const dataFetch = async () => {
   const res = await fetch("/carData.json");
@@ -21,10 +23,13 @@ function App() {
   
   return (
     <>
-      <Navbar></Navbar>
-      <IsActive activeTab = {activeTab} setActiveTab = {setActiveTab}></IsActive>
+      <Navbar card = {card}></Navbar>
+      <Banner></Banner>
+      <IsActive activeTab = {activeTab} setActiveTab = {setActiveTab} card = {card}></IsActive>
       {activeTab === "vehicles" && <CarCards card = {card} setCard = {setCard} getDataPromise = {getDataPromise}></CarCards>}
-      {activeTab === "cart" && <CartSection card = {card}></CartSection>}
+      {activeTab === "cart" && <CartSection card = {card} setCard = {setCard}></CartSection>}
+      <Footer></Footer>
+      
     </>
   );
 }

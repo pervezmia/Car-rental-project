@@ -1,7 +1,7 @@
 
 import { FaCartArrowDown } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ( {card}) => {
 
   
   return (
@@ -28,9 +28,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-5">
-        <button className="text-red-500">
-          <FaCartArrowDown />
-        </button>
+        <div className="relative">
+          <div className="text-red-500 text-3xl"><FaCartArrowDown /></div>
+          <p className="bg-green-400 rounded-full flex items-center justify-center absolute w-4 h-4 -top-3 left-4"><span className="text-xs font-bold">{card.length}</span></p>
+        </div>
         <a className="btn bg-red-500 rounded-full text-white"> Get in Touch</a>
       </div>
 

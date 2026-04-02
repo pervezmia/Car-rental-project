@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const IsActive = ({activeTab, setActiveTab}) => {
+const IsActive = ({activeTab, setActiveTab, card}) => {
     const [isActive, setIsActive] = useState('vehicle');
     const vehiclesHandle = () => {
         setIsActive("vehicle")
@@ -17,8 +17,8 @@ const IsActive = ({activeTab, setActiveTab}) => {
         <div>
             <h2 className='text-3xl font-bold text-center'>Select vehicles</h2>
             <div className='flex justify-center items-center gap-4 py-10'>
-                <button onClick={vehiclesHandle} className={`btn w-20 ${isActive === "vehicle" ? "bg-violet-600" : ""}`}>Vehicles</button>
-                <button onClick={cartHandle} className={`btn w-20 ${isActive === "cart" ?"bg-violet-600" : ""}`}>Cart</button>
+                <button onClick={vehiclesHandle} className={`btn w-30 ${isActive === "vehicle" ? "bg-violet-600" : ""}`}>Vehicles</button>
+                <button onClick={cartHandle} className={`btn w-30 ${isActive === "cart" ?"bg-violet-600" : ""}`}>Cart ({card.length})</button>
             </div>
         </div>
     );

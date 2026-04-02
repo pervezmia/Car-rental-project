@@ -1,9 +1,10 @@
 import { use } from "react";
-import CarCard from "./carCard";
+import CarCard from "./CarCard";
 
 const CarCards = ({ getDataPromise, setActiveTab, card, setCard }) => {
   const dataOfCars = use(getDataPromise);
   // console.log(dataOfCars);
+  // console.log(card);
 
 
   return (
